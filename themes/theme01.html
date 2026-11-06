@@ -99,6 +99,67 @@
           <!----POSTS---->
           {block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
 
+          <article class="posts {PostType}" id="{PostID}" post-type="{PostType}">
+
+            <!----postheader---->
+            {block:Date}
+            <hgroup class="post-header {block:PinnedPostLabel}pinned{/block:PinnedPostLabel}">
+
+              <!----user---->
+              <article class="user {block:isdeactivated}inactive{/block:isdeactivated}">
+                <img class="user-avatar" src="{block:NotReblog}{PortraitURL-128}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootPortraitURL-128}{/block:RebloggedFrom}" />
+                <span class="user-name">
+                  {block:NotReblog}{text:Blog Name}{/block:NotReblog}
+                  <a target="_blank" href="{ReblogRootURL}">
+                    {block:RebloggedFrom}
+                  </a>
+                  {ReblogRootName}
+                </span>
+              </article>
+
+              <!----date----->
+              <span class="date">
+                {ShortMonth} {DayofMonth}, {Year}
+              </span>
+
+              <!----permalink---->
+              <a class="permalink" href="{Permalink}">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000">
+                  <path d="M14 11.9976C14 9.5059 11.683 7 8.85714 7C8.52241 7 7.41904 7.00001 7.14286 7.00001C4.30254 7.00001 2 9.23752 2 11.9976C2 14.376 3.70973 16.3664 6 16.8714C6.36756 16.9525 6.75006 16.9952 7.14286 16.9952" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 11.9976C10 14.4893 12.317 16.9952 15.1429 16.9952C15.4776 16.9952 16.581 16.9952 16.8571 16.9952C19.6975 16.9952 22 14.7577 22 11.9976C22 9.6192 20.2903 7.62884 18 7.12383C17.6324 7.04278 17.2499 6.99999 16.8571 6.99999" stroke="#000000" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+              
+            </hgroup>
+            {/block:Date}
+            <!----end postheader---->
+
+            <!----postwrap---->
+            <section class="post-wrap">
+
+              <!----photo---->
+              {block:Photo}
+              <div class="photopost"><img src="{PhotoURL-HighRes}" alt="{photoalt}" class="photos"></div>
+              {/block:Photo}
+
+              <!----photoset---->
+              {block:Photoset}
+              <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>
+              {/block:Photoset}
+
+              <!----quote----->
+              {block:Quote}
+              <article class="quote">
+                {Quote}
+                <span class="source">
+                  {Source}
+                </span>
+              </article>
+              {/block:Quote}
+            </section>
+            <!----end postwrap---->
+            
+          </article>
+
           {/block:Posts}
           <!----END POSTS---->
           
