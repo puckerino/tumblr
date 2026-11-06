@@ -1,0 +1,70 @@
+button {
+    display: flex;
+    align-items: center;
+    border-radius: var(--spacing-s);
+    corner-shape: var(--button-shape);
+    border: 0;
+    text-box: trim-both cap alphabetic;
+    font-size: var(--fs-button);
+    cursor: pointer;
+
+    & * {
+        text-box: trim-both cap alphabetic;
+    }
+
+    &:not(nav &) {
+        background: var(--button-surface);
+        color: var(--button-text);
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background: var(--button-surface-hover);
+            color: var(--button-text-hover);
+            transition: all .3s ease-in-out;
+
+            svg {
+                fill: var(--button-text-hover);
+            }
+        }
+    }
+
+    &:has(span:only-child) {
+        padding: var(--spacing-s) var(--spacing);
+    }
+
+    &:has(svg + span) {
+        padding: var(--spacing-s) var(--spacing) var(--spacing-s) var(--spacing-s);
+        gap: var(--spacing-s);
+
+        svg {
+            height: 1lh;
+            aspect-ratio: 1;
+            fill: var(--button-text);
+        }
+    }
+
+    &:has(span + svg) {
+        padding: var(--spacing-s) var(--spacing-s) var(--spacing-s) var(--spacing);
+        gap: var(--spacing-s);
+
+        svg {
+            height: 1lh;
+            aspect-ratio: 1;
+            fill: var(--button-text);
+        }
+    }
+
+    &:has(svg:only-child) {
+      --fs-button: 1.5rem;
+      
+        padding: var(--spacing-s);
+        aspect-ratio: 1;
+        justify-content: center;
+
+        svg {
+            height: var(--fs-button);
+            width: var(--fs-button);
+            fill: var(--button-text);
+        }
+    }
+}
