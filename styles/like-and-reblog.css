@@ -1,0 +1,47 @@
+/* ======== LIKE AND REBLOG ========= */
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    
+    a, .like {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        
+        svg {
+            height: 1.5rem;
+            width: 1.5rem;
+            fill: var(--f-text);
+        }
+    }
+    
+    .like {
+        .liked + svg {
+            opacity: 1;
+            
+            path {
+                fill: red;
+            }
+        }
+        
+        .like_button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            
+            iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+                opacity: 0;
+            }
+        }
+    }
+}
