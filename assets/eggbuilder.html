@@ -8,12 +8,32 @@
             <link rel="alternate" type="application/rss+xml" href="{RSS}">
             {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
             {block:Options}
-
+            <meta name="color:background" content="#fff"/>
+            <meta name="color:posts" content="#fff"/>
+            <meta name="color:text" content="#000"/>
+            <meta name="color:links" content="#000" />
+            <meta name="color:tags" content="#000" />
+            <meta name="color:sidebar links" content="{AccentColor}"/>
+            <meta name="color:search background" content="#fff" />
+            <meta name="color:search text" content="#000"/>
+            <meta name="color:borders" content="#ddd"/>
+            <meta name="text:border width" content="1px"/>
+            <meta name="text:border radius" content="4px"/>
+            <meta name="text:font size" content="16px" />
+            <meta name="image:background" content=""/>
+            <meta name="if:full background" content=""/>
              
+            <meta name="select:Font" content="Helvetica" title="Helvetica" />
+            <meta name="select:Font" content="Roboto" title="Roboto" />
+            <meta name="select:Font" content="Favorit" title="Favorit" />
+            <meta name="select:Font" content="Calluna" title="Calluna" />
+            <meta name="select:Font" content="Fairwater" title="Fairwater" />
+            <meta name="select:Font" content="Source Code Pro" title="Source Code Pro" />
             {/block:Options}
 
             {NewPostStyles} 
              <style>
+             @import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
                 * {
                     box-sizing: border-box;
@@ -43,7 +63,9 @@
                     height: 100vh;
                     color: var(--text);
                     background: var(--background) var(--background-image) center center fixed;
-                }
+                    {block:iffullbackground}
+                    background-size: cover;
+                    {/block:iffullbackground}}
                 
                 a {
                     color: var(--links);
