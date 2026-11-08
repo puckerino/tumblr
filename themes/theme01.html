@@ -369,6 +369,29 @@
 
           {/block:Posts}
           <!----END POSTS---->
+
+          <!----PAGINATION---->
+          {block:Pagination}
+          <menu class="pagination">
+            {block:PreviousPage}
+            <li>
+              <a title="previous" href="{PreviousPage}">
+                <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M15 6L9 12L15 18" stroke="#000000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+            </li>
+            {/block:PreviousPage}
+
+            <li>
+              <b>{CurrentPage}</b> / {TotalPages}
+            </li>
+
+            {block:NextPage}
+            <a title="next" href="{NextPage}">
+              <?xml version="1.0" encoding="UTF-8"?><svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="#000000"><path d="M9 6L15 12L9 18" stroke="#000000" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </a>
+            {/block:NextPage}
+          </menu>
+          {/block:Pagination}
           
         </section>
         
