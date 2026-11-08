@@ -43,6 +43,9 @@
 
       <!----HEADER---->
       <header>
+        <h1>
+          <a href="/">{Title}</a>
+        </h1>
       </header>
 
       <!----NAV---->
@@ -76,6 +79,11 @@
 
         <!----ASIDE---->
         <aside>
+          <figure class="avatar-sidebar">
+            <img src="{PortraitURL-128}" />
+          </figure>
+          <a href="/">{Title}</a>
+          
           
         </aside>
 
@@ -396,6 +404,28 @@
         </section>
         
       </main>
+
+      <script>
+        /// photosets
+$(document).ready(function(){
+   $('.photo-slideshow').pxuPhotoset({
+       lightbox: true,
+       rounded: '',
+       gutter: '4px',
+       borderRadius: '0',
+       photoset: '.photo-slideshow',
+       photoWrap: '.photo-data',
+       photo: '.pxu-photo'
+   });
+});
+        
+        // remove empty p tags
+for (const p of document.querySelectorAll('p')) {
+    if (p.innerHTML.trim() === '') {
+       p.remove()
+    }
+}
+      </script>
 
     </body>
 </html>
