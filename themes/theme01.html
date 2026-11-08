@@ -155,8 +155,215 @@
                 </span>
               </article>
               {/block:Quote}
+
+              <!----chat---->
+              {block:Chat}
+              <ul class="chatpost">
+                {block:Lines}
+                <li>
+                  {block:Label}
+                  <label>{Label}</label>
+                  {/block:Label} 
+                  <span class="line">
+                    {Line}
+                  </span>
+                </li>
+                {/block:Lines}
+              </ul>
+              {/block:Chat}
+
+              <!----linkpost---->
+              {block:Link}
+              <article class="linkpost">
+                <a href="{URL}" target="_blank">
+                  {Name}
+                </a>
+              </article>
+              {/block:Link}
+
+              <!----videopost---->
+              {block:Video}
+              {Video-700}
+              {/block:Video}
+
+              <!----audiopost---->
+              {block:Audio}
+              <article class="audiopost">                        
+                <div class="audiotitle">       
+                  <div class="audioplaybg">
+                    <div class="audioplay">
+                      {block:AudioPlayer}
+                      {AudioPlayer}
+                      {/block:AudioPlayer}
+                    </div>
+                  </div>
+                  <li>
+                    <b>
+                      {block:trackname}
+                      {Trackname}
+                      {/block:trackname}
+                    </b>
+            
+                    <span>
+                      {block:Artist}
+                      {Artist}
+                      {/block:Artist}
+                    </span>
+                  </li>
+        
+                </div>
+        
+                <div class="albumart">
+                  {block:albumart}
+                  <img src="{AlbumArtURL}" />
+                  {/block:albumart}
+                </div>
+              </article>
+              {/block:Audio}
+
+              <!----answerpost---->
+              {block:Answer}
+              <article class="answerpost">
+                <article class="question">
+                  <hgroup>
+                    <figure class="user-avatar">
+                      <img src="{AskerPortraitURL-128}" />
+                    </figure>
+                    <h3>
+                      {Asker}
+                    </h3>
+                  </hgroup>
+                  <div class="prose">
+                    {Question}
+                  </div>
+                </article>
+                
+                {block:Answerer}
+                <article class="answer">
+                  <hgroup>
+                    <figure class="user-avatar">
+                      <img src="{AnswererPortraitURL-128}" />
+                    </figure>
+                    <h3>
+                      {Answerer}
+                    </h3>
+                  </hgroup>
+                  <div class="prose">
+                    {Answer}
+                  </div>
+                </article>
+                {/block:Answerer}
+                {block:NotReblog}
+                <div class="answer">
+                  <div class="prose">
+                    {Replies}
+                  </div>
+                </div>
+                {/block:NotReblog}
+              </article>
+              {/block:Answer}
+
+              <!----textpost---->
+              <article class="caption {block:notreblog} original-post {/block:notreblog}">
+                {block:Text}
+                {block:Title}
+                <h2>
+                  {Title}
+                </h2>
+                {/block:Title}
+                {/block:Text}
+
+                {block:NotReblog}
+                {block:Caption}{Caption}{/block:Caption}
+                {block:Text}{Body}{/block:Text}
+                {/block:NotReblog}
+
+                {block:Rebloggedfrom}
+                {block:Reblogs}
+                <article class="reblogs">
+                  <hgroup class="userlink source-head">
+                    <a href="{Permalink}" target="_blank">
+                      <img src="{PortraitURL-64}" alt="{username}'s avatar" />
+                      <a href="{permalink}" target="_blank" {block:isdeactivated}class="deactive"{/block:isdeactivated}>
+                        {username}
+                      </a>
+                    </a>
+                  </hgroup>
+                  <div class="reblog-content">
+                    {Body}
+                  </div>
+                </article>
+                {/block:Reblogs}
+                {/block:RebloggedFrom}
+              </article>
+              
             </section>
             <!----end postwrap---->
+
+            <!----tags---->
+            {block:HasTags}
+            <menu class="tags">
+              {block:Tags}
+              <li>
+                <a href="{TagURL}">
+                  {Tag}
+                </a>
+              </li>
+              {/block:Tags}
+            </menu>
+            {/block:HasTags}
+
+            <!----permalink page---->
+            {block:PermalinkPage}
+            {block:Date}
+            <section class="permalinkpage">
+              <ul class="permalink-info">
+                
+                {block:NotReblog}
+                <li>Original post by 
+                  <a href="{PostAuthorURL}">
+                    {PostAuthorName}
+                  </a>
+                </li>
+                {/block:NotReblog}
+                
+                {block:RebloggedFrom}
+                <li>
+                  Originally posted by 
+                  <a href="{ReblogRootURL}">
+                    {ReblogRootName}
+                  </a>
+                </li>
+                <li>
+                  Reblogged from
+                  <a href="{ReblogParentURL}">
+                    {ReblogParentName}
+                  </a>
+                </li>
+                {/block:RebloggedFrom}
+                
+                <li class="date">
+                  <a href="/day/{Year}/{MonthNumberWithZero}/{dayofmonthwithzero}">
+                    {DayofWeek}, {DayofMonth} {Month}, {Year}
+                  </a>
+                </li>
+
+                <li class="notes">
+                  {NoteCountWithLabel}
+                </li>
+              </ul>
+
+              <!----postnotes---->
+              {block:NoteCount}
+              {block:PostNotes}
+              <article class="postnotes">
+                {PostNotes-64}
+              </article>
+              {/block:PostNotes}
+              {/block:NoteCount}
+            </section>
+            {/block:Date}
+            {/block:PermalinkPage}
             
           </article>
 
