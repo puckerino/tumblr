@@ -1,0 +1,18 @@
+:root {
+  --background: #faf9f6;
+  --surface: #fcfbf9;
+  --surface-elevated: #fdfdfb;
+  --border: #e1e0dd;
+  --text: #323231;
+  --text-elevated: #191919;
+  --text-muted: #7d7d7b;
+  --accent: ;
+
+  --shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  --f-text: "Karla", sans-serif;
+  --f-mono: "DM Mono", monospace;
+  --f-deco: 'Jelly Ball Personal Use', sans-serif;
+
+  --nav-size: 50px;
+}
