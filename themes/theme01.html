@@ -138,24 +138,35 @@
               </a>
               
             </hgroup>
+            <menu class="like-and-reblog">
+              <li>
+                <a title="like" class="like-button" href="#"> 
+                  {LikeButton} 
+                </a>
+              </li>
+              <li>
+                <a title="reblog" class="reblog-button" href="{ReblogURL}" target="_blank">
+                  REBLOG
+                </a>
+              </li>
+            </menu>
             {/block:Date}
             <!----end postheader---->
 
             <!----postwrap---->
             <section class="post-wrap">
 
-              <!----photo---->
-              {block:Photo}
+              {block:Photo}<!----photo---->
               <div class="photopost"><img src="{PhotoURL-HighRes}" alt="{photoalt}" class="photos"></div>
               {/block:Photo}
 
-              <!----photoset---->
-              {block:Photoset}
+              
+              {block:Photoset}<!----photoset---->
               <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">{block:Photos}<div class="photo-data"><div class="pxu-photo"><img src="{PhotoURL-500}" width="{PhotoWidth-500}" height="{PhotoHeight-500}" data-highres="{PhotoURL-HighRes}" data-width="{PhotoWidth-HighRes}" data-height="{PhotoHeight-HighRes}"></div><a class="tumblr-box" rel="post-{PostID}" href="{PhotoURL-HighRes}"></a></div>{/block:Photos}</div>
               {/block:Photoset}
 
-              <!----quote----->
-              {block:Quote}
+              
+              {block:Quote}<!----quote----->
               <article class="quote">
                 {Quote}
                 <span class="source">
@@ -164,8 +175,8 @@
               </article>
               {/block:Quote}
 
-              <!----chat---->
-              {block:Chat}
+              
+              {block:Chat}<!----chat---->
               <ul class="chatpost">
                 {block:Lines}
                 <li>
@@ -180,8 +191,8 @@
               </ul>
               {/block:Chat}
 
-              <!----linkpost---->
-              {block:Link}
+              
+              {block:Link}<!----linkpost---->
               <article class="linkpost">
                 <a href="{URL}" target="_blank">
                   {Name}
@@ -189,13 +200,13 @@
               </article>
               {/block:Link}
 
-              <!----videopost---->
-              {block:Video}
+              
+              {block:Video}<!----videopost---->
               {Video-700}
               {/block:Video}
 
-              <!----audiopost---->
-              {block:Audio}
+              
+              {block:Audio}<!----audiopost---->
               <article class="audiopost">                        
                 <div class="audiotitle">       
                   <div class="audioplaybg">
@@ -229,8 +240,8 @@
               </article>
               {/block:Audio}
 
-              <!----answerpost---->
-              {block:Answer}
+              
+              {block:Answer}<!----answerpost---->
               <article class="answerpost">
                 <article class="question">
                   <hgroup>
@@ -271,8 +282,8 @@
               </article>
               {/block:Answer}
 
-              <!----textpost---->
-              <article class="caption {block:notreblog} original-post {/block:notreblog}">
+              
+              <article class="caption {block:notreblog} original-post {/block:notreblog}"><!----textpost---->
                 {block:Text}
                 {block:Title}
                 <h2>
@@ -378,8 +389,8 @@
           {/block:Posts}
           <!----END POSTS---->
 
-          <!----PAGINATION---->
-          {block:Pagination}
+          
+          {block:Pagination}<!----PAGINATION---->
           <menu class="pagination">
             {block:PreviousPage}
             <li>
