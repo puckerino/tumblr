@@ -110,7 +110,7 @@
           {/block:DayPage}
 
           <!----POSTS---->
-          {block:posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
+          {block:Posts inlineMediaWidth="1280" inlineNestedMediaWidth="1280"}
 
           <article class="posts {PostType}" id="{PostID}" post-type="{PostType}">
 
@@ -122,11 +122,15 @@
               <article class="user {block:isdeactivated}inactive{/block:isdeactivated}">
                 <img class="user-avatar" src="{block:NotReblog}{PortraitURL-128}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootPortraitURL-128}{/block:RebloggedFrom}" />
                 <span class="user-name">
-                  {block:NotReblog}{text:Blog Name}{/block:NotReblog}
+                  {block:NotReblog}
+                  {text:Blog Name}
+                  {/block:NotReblog}
+                  
+                  {block:RebloggedFrom}
                   <a target="_blank" href="{ReblogRootURL}">
-                    {block:RebloggedFrom}
+                    {ReblogRootName}
                   </a>
-                  {ReblogRootName}
+                  {/block:RebloggedFrom}
                 </span>
               </article>
 
